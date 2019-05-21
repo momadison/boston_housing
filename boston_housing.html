@@ -13755,8 +13755,8 @@ More training points would not tell us much more about the model</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong>  This technique involves randomly dividing the dataset into k groups or folds of approximately equal size.  The data is split into k groups and then each piece is run with one group out for training and then the average score is taken.  This allows for the testing data to be used as training without breaking the golden rule.</p>
-<p>To expand further:  k-fold divides the data into multiple samples which allows you to use several different test sets against several different training sets.  Using the same training set and the same testing set can possibly lead to overfitting</p>
+<p><strong>Answer: </strong>  This technique involves randomly dividing the dataset into k groups or folds of approximately equal size.  The data is first split into train and test and then K-fold is applied to the train data.  K-fold is a cross-validation technique that along with grid search and the test set can be used to check the final performance of the model.</p>
+<p>To expand further:  k-fold divides the data into multiple samples which allows you to use several different test sets against several different training sets. The average cross-validation score is used to check the performance of the model</p>
 
 </div>
 </div>
@@ -13981,11 +13981,10 @@ Predicted selling price for Client 3&#39;s home: $931,636.36
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong>
-Predicted selling price for Client 1's home: $403,025.00
-Predicted selling price for Client 2's home: $237,478.72
-Predicted selling price for Client 3's home: $931,636.36</p>
-<p>these prices do seem to be reasonable</p>
+<p><strong>Answer: </strong></p>
+<p>client_1 - Client 1's home is predicted at $403,025.  This falls right near our mean cost for the data.  The totatl number of rooms for the house are 5 rooms with a 17% neighborhood poverty rate and a 15 to 1 student-teacher ratio.</p>
+<p>client_2 - Client 2's home is made up of 4 rooms which is not significantly different in size compared to client_1's home.  However the value of the home is predicted at almost half of what client_1's home was.  This is most likely due to the 32% poverty rate and 22-1 student-teacher ratio.  It seems reasonable that houses of similiar size would cost much less in an area that had a higher poverty rate and a poorer school system</p>
+<p>client_3 - Client 3's home is predicted to be almost double client_1's value.  This makes sense since it's almost twice the size, 1/5th the poverty level, and a much better school district.</p>
 
 </div>
 </div>
